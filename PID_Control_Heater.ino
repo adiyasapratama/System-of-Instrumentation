@@ -59,7 +59,6 @@ void readTemp() {
   //temperatur = 0.0001*(adcValue*adcValue)+0.0278*adcValue+27.386;
 }
 
-
 void buttonLogic() {
   // Increment Button Logic
   if (lastIncrementState == HIGH && incrementState == LOW && millis() - lastDebounceTime > debounceDelay) {
@@ -79,7 +78,6 @@ void buttonLogic() {
   lastIncrementState = incrementState;
   lastColumnState = columnState;
 }
-
 
 void displaySetpoint() {
   setpoint = digits[0] * 10 + digits[1];
@@ -122,7 +120,6 @@ void PID_control() {
   output = constrain(output, 0, 100);
 }
 
-
 void TPO() {
   unsigned long now = millis();
   if (now - windowStartTime > cycleTime) {
@@ -138,7 +135,6 @@ void TPO() {
   }
   prevError = error;
 }
-
 
 void setup() {
   pinMode(buttonPin_increment, INPUT);
